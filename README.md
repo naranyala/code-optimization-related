@@ -7,8 +7,6 @@
 
 A definitive compendium of performance engineering resources, bridging the gap between high-level algorithmic theory and low-level hardware exploitation. This guide provides a multi-layered approach to optimization—spanning cache-friendly architecture, zero-copy systems, kernel-bypass networking, and advanced compiler-driven optimizations—empowering developers to build software that is inherently fast, lean, and scalable.
 
-![Optimization Banner](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80)
-
 ---
 
 ## ⚡ Table of Contents
