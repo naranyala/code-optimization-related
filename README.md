@@ -47,7 +47,6 @@ A definitive compendium of performance engineering resources, bridging the gap b
 - **[mimalloc](https://github.com/microsoft/mimalloc)**: Microsoft's compact, high-performance allocator.
 - **[jemalloc](https://github.com/jemalloc/jemalloc)**: Scalable concurrency-focused allocator.
 - **[RocksDB](https://github.com/facebook/rocksdb)**: High-performance persistent key-value store.
-- **[Efficient I/O]**: Using `sendfile`, `splice`, and `mmap` to eliminate redundant CPU memory transfers.
 
 ---
 
