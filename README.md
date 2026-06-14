@@ -5,7 +5,7 @@
 
 > *"The fastest code is the code that never runs. The second fastest is the code that aligns with the hardware."*
 
-A definitive compendium of performance engineering resources, bridging the gap between high-level algorithmic theory and low-level hardware exploitation. This guide provides a multi-layered approach to optimization—spanning cache-friendly architecture, zero-copy systems, kernel-bypass networking, and advanced compiler-driven optimizations—empowering developers to build software that is inherently fast, lean, and scalable.
+A definitive compendium of performance engineering resources, bridging the gap between high-level algorithmic theory and low-level hardware exploitation. This guide provides a multi-layered approach to optimization—spanning cache-friendly architecture, highly efficient data transfer systems, kernel-bypass networking, and advanced compiler-driven optimizations—empowering developers to build software that is inherently fast, lean, and scalable.
 
 ---
 
@@ -47,7 +47,7 @@ A definitive compendium of performance engineering resources, bridging the gap b
 - **[mimalloc](https://github.com/microsoft/mimalloc)**: Microsoft's compact, high-performance allocator.
 - **[jemalloc](https://github.com/jemalloc/jemalloc)**: Scalable concurrency-focused allocator.
 - **[RocksDB](https://github.com/facebook/rocksdb)**: High-performance persistent key-value store.
-- **[Zero-Copy I/O]**: Using `sendfile`, `splice`, and `mmap` to eliminate redundant CPU copies.
+- **[Efficient I/O]**: Using `sendfile`, `splice`, and `mmap` to eliminate redundant CPU memory transfers.
 
 ---
 
@@ -55,9 +55,9 @@ A definitive compendium of performance engineering resources, bridging the gap b
 
 - **[Zstandard (Zstd)](https://github.com/facebook/zstd)**: High compression ratio + high speed.
 - **[LZ4](https://github.com/lz4/lz4)**: Blazing fast compression, limited only by RAM speed.
-- **[FlatBuffers](https://github.com/google/flatbuffers)**: Zero-copy access (C++, Rust, Go, Java).
-- **[MemoryPack](https://github.com/Cysharp/MemoryPack)** (.NET): Ultra-fast zero-allocation binary serializer for C#.
-- **[rkyv](https://github.com/rkyv/rkyv)** (Rust): Zero-copy serialization for the Rust ecosystem.
+- **[FlatBuffers](https://github.com/google/flatbuffers)**: Direct memory access without decoding (C++, Rust, Go, Java).
+- **[MemoryPack](https://github.com/Cysharp/MemoryPack)** (.NET): Ultra-fast minimal-overhead binary serializer for C#.
+- **[rkyv](https://github.com/rkyv/rkyv)** (Rust): Direct memory serialization for the Rust ecosystem.
 
 ---
 
@@ -87,7 +87,7 @@ A definitive compendium of performance engineering resources, bridging the gap b
 
 ### 🐹 Go (High-Concurrency)
 - **[pprof](https://pkg.go.dev/net/http/pprof)**: Go's unparalleled, built-in profiling tool for CPU, memory, and goroutine blocking.
-- **[Fasthttp](https://github.com/valyala/fasthttp)**: Zero-allocation, high-performance HTTP server up to 10x faster than `net/http`.
+- **[Fasthttp](https://github.com/valyala/fasthttp)**: Minimal-overhead, high-performance HTTP server up to 10x faster than `net/http`.
 - **[sync.Pool](https://pkg.go.dev/sync#Pool)**: The built-in package for reducing garbage collection by reusing object allocations.
 - **[Gnet](https://github.com/panjf2000/gnet)**: A high-performance, lightweight, non-blocking networking framework.
 
@@ -109,7 +109,7 @@ A definitive compendium of performance engineering resources, bridging the gap b
 - **[Pino](https://github.com/pinojs/pino)**: Extremely fast Node.js logger utilizing asynchronous streams.
 
 ### 🔷 .NET / C#
-- **[Span<T> / Memory<T>](https://learn.microsoft.com/en-us/dotnet/standard/memory-and-spans/memory-t-and-span-t-usage-guidelines)**: Zero-allocation memory primitives for safe array slicing.
+- **[Span<T> / Memory<T>](https://learn.microsoft.com/en-us/dotnet/standard/memory-and-spans/memory-t-and-span-t-usage-guidelines)**: Highly efficient memory primitives for safe array slicing.
 - **[Channels](https://github.com/dotnet/runtime/tree/main/src/libraries/System.Threading.Channels)**: High-performance producer/consumer library.
 - **[NetCoreServer](https://github.com/chronoxor/NetCoreServer)**: Ultra-fast asynchronous socket library.
 
@@ -136,10 +136,27 @@ A definitive compendium of performance engineering resources, bridging the gap b
 ### 📄 Seminal Papers
 - **Huffman (1952)**: [A Method for the Construction of Minimum-Redundancy Codes](https://ieeexplore.ieee.org/document/4051119).
 - **Ziv & Lempel (1977)**: [A Universal Algorithm for Sequential Data Compression](https://ieeexplore.ieee.org/document/1055714).
+- **Burrows & Wheeler (1994)**: [A Block-sorting Lossless Data Compression Algorithm](https://www.hpl.hp.com/techreports/Compaq-DEC/SRC-RR-124.pdf).
+- **Facebook (Yann Collet)**: [Zstandard: Fast and Data-Independent Compression](https://github.com/facebook/zstd).
 
 ### 🎥 Must-Watch Talks
 - **[Data-Oriented Design] (https://www.youtube.com/watch?v=rX0ItVEVjHc)** — Mike Acton.
 - **[When a Microsecond Is an Eternity] (https://www.youtube.com/watch?v=NH1Tta7purM)** — Carl Cook.
+- **[Efficiency with Algorithms, Performance with Data Structures] (https://www.youtube.com/watch?v=fHNmRkzxHWs)** — Chandler Carruth.
+- **[Performance Matters] (https://www.youtube.com/watch?v=r-TLSBdHe1A)** — Emery Berger.
+
+### ✍️ High-Authority Engineering Blogs & Articles
+- **[Agner Fog's Software Optimization Resources](https://www.agner.org/optimize/)**: The definitive guide to x86 microarchitecture optimizations.
+- **[Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)**: A legendary cheat sheet on computer latencies.
+- **[Cloudflare Blog](https://blog.cloudflare.com/)**: Deep dives into Linux kernel tuning and network performance.
+- **[Netflix Tech Blog](https://netflixtechblog.com/)**: Lessons on JVM tuning, high-throughput systems, and caching strategies.
+- **[Brendan Gregg's Blog](https://www.brendangregg.com/blog/)**: The definitive source for eBPF, flame graphs, and Linux performance analysis.
+- **[Dan Luu's Blog](https://danluu.com/)**: Data-driven analysis of hardware latency and system architecture.
+
+### 📖 Recommended Books
+- **[Designing Data-Intensive Applications](https://dataintensive.net/)** *by Martin Kleppmann*.
+- **[Computer Systems: A Programmer's Perspective (CSAPP)](https://csapp.cs.cmu.edu/)** *by Randal E. Bryant and David R. O'Hallaron*.
+- **[Systems Performance: Enterprise and the Cloud](https://www.brendangregg.com/systems-performance-2nd-edition-book.html)** *by Brendan Gregg*.
 
 ---
 
